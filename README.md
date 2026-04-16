@@ -171,31 +171,17 @@ Exit code: 0
 
 ## SSH-Key einrichten
 
-Damit die App sich am Server anmelden kann, muss ein SSH-Schlüsselpaar vorhanden sein.
+Das SSH-Schlüsselpaar wird von der **Kursleiterin** bereitgestellt und an die Schülerinnen und Schüler ausgeteilt.
 
-### Schlüsselpaar erzeugen (einmalig)
+### Schlüsseldatei ablegen
 
-PowerShell öffnen und folgenden Befehl ausführen:
+Die erhaltene Schlüsseldatei (z. B. `id_ed25519`) an einen festen Ort auf dem eigenen PC speichern, zum Beispiel:
 
-```powershell
-ssh-keygen -t ed25519 -C "minecraft-client"
+```
+C:\Users\<DeinName>\.ssh\id_ed25519
 ```
 
-- Speicherort bestätigen (Standard: `C:\Users\<Name>\.ssh\id_ed25519`)
-- Passphrase optional (leer lassen für passwortlosen Zugriff)
-
-Es entstehen zwei Dateien:
-- `id_ed25519` – **Private Key** (geheim halten, wird in der App eingetragen)
-- `id_ed25519.pub` – **Public Key** (wird auf dem Server hinterlegt)
-
-### Public Key auf dem Server hinterlegen
-
-Den Inhalt von `id_ed25519.pub` auf dem Server in die Datei `/home/mc-ctrl/.ssh/authorized_keys` eintragen:
-
-```bash
-echo "ssh-ed25519 AAAA... minecraft-client" >> /home/mc-ctrl/.ssh/authorized_keys
-chmod 600 /home/mc-ctrl/.ssh/authorized_keys
-```
+> **Wichtig:** Die Datei nicht umbenennen und nicht weitergeben.
 
 ---
 
@@ -205,7 +191,7 @@ chmod 600 /home/mc-ctrl/.ssh/authorized_keys
 |---------|-----------------|--------|
 | `ssh.exe not found` | OpenSSH Client nicht installiert | OpenSSH Client als Windows-Feature nachinstallieren (siehe [Voraussetzungen](#voraussetzungen)) |
 | `Private key file not found` | Pfad im Feld **Private Key** ist falsch | Pfad prüfen oder **Browse...** nutzen |
-| `Permission denied (publickey)` | Public Key nicht auf dem Server hinterlegt | Prüfen ob `id_ed25519.pub` in `authorized_keys` steht |
+| `Permission denied (publickey)` | Falsche oder fehlende Schlüsseldatei | Prüfen ob die von der Kursleiterin erhaltene Schlüsseldatei korrekt im Feld **Private Key** eingetragen ist |
 | `Connection refused` | Falscher Port oder Server nicht erreichbar | Port und Hostname/IP prüfen; Firewall kontrollieren |
 | `Invalid SSH port` | Port-Eingabe enthält keine gültige Zahl | Nur Zahlen zwischen 1 und 65535 eingeben |
 | Exit code ≠ 0 | Befehl auf dem Server fehlgeschlagen | Log-Ausgabe lesen; Server-Logs auf dem Host prüfen |
