@@ -9,7 +9,7 @@ namespace MinecraftSshClient
 {
     public class MainForm : Form
     {
-        private readonly TextBox txtHost = new() { Width = 260, Text = "server.example.com" };
+        private readonly TextBox txtHost = new() { Width = 260, Text = "2.56.99.112" };
         private readonly TextBox txtPort = new() { Width = 80, Text = "22" };
         private readonly TextBox txtUser = new() { Width = 180, Text = "mc-ctrl", ReadOnly = true };
         private readonly TextBox txtKeyPath = new() { Width = 420 };
