@@ -1,13 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+	<TargetFramework>net10.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>MinecraftSshClient</AssemblyName>
     <RootNamespace>MinecraftSshClient</RootNamespace>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+    <StartupObject>MinecraftSshClient.Program</StartupObject>
+	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	<SelfContained>true</SelfContained>
+	<PublishSingleFile>true</PublishSingleFile>
   </PropertyGroup>
 
 </Project>

@@ -43,12 +43,12 @@ namespace MinecraftSshClient
             var lblKey = new Label { Text = "Private Key", AutoSize = true };
             var lblVersion = new Label { Text = "Minecraft Version", AutoSize = true };
 
-            var btnBrowse = new Button { Text = "Browse..." };
+            var btnBrowse = new Button { Text = "Browse...", Width = 120, Height = 40 };
             btnBrowse.Click += (_, _) => BrowseKey();
 
-            var btnStart = new Button { Text = "Start", Width = 120 };
-            var btnStop = new Button { Text = "Stop", Width = 120 };
-            var btnVersion = new Button { Text = "Set Version", Width = 120 };
+            var btnStart = new Button { Text = "Start", Width = 120 , Height = 40};
+            var btnStop = new Button { Text = "Stop", Width = 120, Height = 40 };
+            var btnVersion = new Button { Text = "Set Version", Width = 120, Height = 40 };
 
             btnStart.Click += async (_, _) => await RunCommandAsync("start");
             btnStop.Click += async (_, _) => await RunCommandAsync("stop");
@@ -190,6 +190,11 @@ namespace MinecraftSshClient
             if (File.Exists(candidate)) return candidate;
 
             return "ssh.exe";
+        }
+
+        private void InitializeComponent()
+        {
+
         }
 
         private void AppendLog(string text)

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MinecraftSshClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3756aa3ce0e7ad3f9380c7bcfb6da15c75d3216")]
 [assembly: System.Reflection.AssemblyProductAttribute("MinecraftSshClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MinecraftSshClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
